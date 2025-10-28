@@ -15,8 +15,9 @@ function NewTodo() {
 
   const addTodo = async () => {
     try {
+      // Use the same backend base URL as Home so newly added todos show up
       const response = await axios.post(
-        `https://to-do-backend-2-ikg7.onrender.com/todos`,
+        `https://todo-backend-eight-xi.vercel.app/todos`,
         todoData
       );
 
@@ -28,14 +29,17 @@ function NewTodo() {
         }, 2000);
       }
     } catch (error) {
-      toast.error("Failed to add!!", error);
+      console.error("Add todo failed:", error);
+      const msg =
+        error?.response?.data?.message || error?.message || "Failed to add!!";
+      toast.error(msg);
     }
   };
 
   return (
     <div>
       <div className="new-todo-form">
-        <p className="heading">Create To Do</p>
+        <p className="heading">Create Plan</p>
         <input
           type="text"
           className="input-box"

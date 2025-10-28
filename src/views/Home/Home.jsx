@@ -10,7 +10,7 @@ function Home() {
   const [todos, setTodos] = useState([]);
 
   const loadTodos = async () => {
-    const response = await axios.get("https://to-do-backend-2-ikg7.onrender.com/todos");
+    const response = await axios.get("https://todo-backend-eight-xi.vercel.app/todos");
     setTodos(response.data.data);
   };
 
@@ -20,7 +20,7 @@ function Home() {
 
   const deleteTodo = async (id) => {
     try {
-      const response = await axios.delete(`https://to-do-backend-2-ikg7.onrender.com/todos/${id}`);
+      const response = await axios.delete(`https://todo-backend-eight-xi.vercel.app//todos/${id}`);
   
       if (response) {
         toast.success(response.data.message);
@@ -33,7 +33,7 @@ function Home() {
 
   return (
     <div>
-      <h1 className="heading">To Do List</h1>
+      <h1 className="heading">PlanWise – smart planning made simple.</h1>
 
       {todos.map((todoObj) => {
         const { id, todoItem, emoji, priority, isDone, createdAt } = todoObj;
@@ -60,7 +60,7 @@ function Home() {
       })}
 
       <Link to="/new" className="fab">
-        New ToDo
+        Add New
       </Link>
       <Toaster/>
     </div>
