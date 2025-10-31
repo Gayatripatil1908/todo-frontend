@@ -17,7 +17,7 @@ function NewTodo() {
     try {
       // Use the same backend base URL as Home so newly added todos show up
       const response = await axios.post(
-        `https://todo-backend-apii.onrender.com/todos`,
+        `https://todo-backend-887a.onrender.com/todos`,
         todoData
       );
 
