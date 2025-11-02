@@ -16,7 +16,7 @@ function NewTodo() {
   const addTodo = async () => {
     try {
       // Use the same backend base URL as Home so newly added todos show up
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/todos`, todoData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/todos`,todoData);
 
       if (response) {
         toast.success(response.data.message);

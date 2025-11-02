@@ -7,8 +7,8 @@ import NewTodo from "./views/NewTodo/NewTodo.jsx";
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home/>}></Route>
-      <Route path="/new" element={<NewTodo/>}></Route>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/new" element={<NewTodo/>}/>
     </Routes>
   </BrowserRouter>
 );
